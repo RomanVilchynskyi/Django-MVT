@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}RentCar{% endblock %}</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Навбар -->
+    <nav class="bg-white shadow mb-6">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold">RentCar</a>
+            <a href="/cars/create" class="text-blue-600 hover:underline">Додати авто</a>
+        </div>
+    </nav>
+
+    <!-- Контент -->
+    <div class="container mx-auto px-4">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

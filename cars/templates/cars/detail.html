@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1 class="text-3xl font-bold mb-4">{{ car.brand }} {{ car.model }}</h1>
+
+{% if car.image %}
+    <img src="{{ car.image }}" class="w-full max-w-md rounded mb-4">
+{% endif %}
+
+<p class="text-lg"><b>Рік:</b> {{ car.year }}</p>
+<p class="text-lg"><b>Ціна:</b> {{ car.price_per_day }} грн/доба</p>
+
+{% if car.description %}
+    <p class="mt-4">{{ car.description }}</p>
+{% endif %}
+
+<a href="/cars" class="text-blue-600 mt-4 block">← Назад</a>
+
+{% endblock %}
