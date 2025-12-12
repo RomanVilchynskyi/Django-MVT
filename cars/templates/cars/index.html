@@ -8,14 +8,14 @@
         <div class="bg-white shadow p-4 rounded">
 
             {% if car.image %}
-                <a href="/cars/{{ car.id }}/">
+                <a href="/cars/{{ car.pk }}/">
                     <img src="{{ car.image }}" 
                          class="w-full h-40 object-cover rounded mb-3 hover:opacity-80 transition">
                 </a>
             {% endif %}
 
             <h2 class="font-bold text-lg">
-                <a href="/cars/{{ car.id }}/" class="hover:underline">
+                <a href="/cars/{{ car.pk }}/" class="hover:underline">
                     {{ car.brand }} {{ car.model }}
                 </a>
             </h2>
@@ -24,11 +24,11 @@
             <p class="text-gray-800 font-semibold">{{ car.price_per_day }} грн/доба</p>
 
             <div class="mt-3 flex gap-2 text-sm">
-                <a href="/cars/{{ car.id }}/edit/" 
+                <a href="/cars/{{ car.pk }}/edit/" 
                     class="bg-yellow-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded inline-block text-center">
                     Редагувати
                 </a>
-                <a href="/cars/{{ car.id }}/delete/" 
+                <a href="/cars/delete/{{ car.pk }}/" 
                     class="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded inline-block text-center">
                     Видалити
                 </a>
