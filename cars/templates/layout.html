@@ -1,29 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}RentCar{% endblock %}</title>
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+   <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" />
 </head>
 
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- Навбар
+    Навбар
     <nav class="bg-white shadow mb-6">
         <div class="flex items-center gap-4 p-4 container mx-auto">
             <a href="/" class="text-xl font-bold">RentCar</a>
             <a href="/cars" class="text-blue-600 hover:underline">Cars</a>
            
         </div>
-    </nav> -->
+    </nav>
 
     
-    <nav class="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default">
+    <!-- <nav class="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-7" alt="Flowbite Logo" /> -->
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-7" alt="Flowbite Logo" /> 
                 <span class="self-center text-xl text-heading font-semibold whitespace-nowrap">Rent cars</span>
             </a>
             <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-default" aria-expanded="false">
@@ -38,12 +44,18 @@
             </ul>
             </div>
         </div>
-    </nav>
+    </nav>-->
     <div class="clearfix"></div>
     <!-- Контент -->
     <div class="container mx-auto px-4 pt-20">
         {% block content %}{% endblock %}
     </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
 
 </body>
 </html>
