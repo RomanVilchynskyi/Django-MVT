@@ -15,5 +15,5 @@ class CarForm(forms.ModelForm):
             'year': forms.NumberInput(attrs={'class': BASE_INPUT_CLASSES, 'placeholder': '2022'}),
             'price_per_day': forms.NumberInput(attrs={'class': BASE_INPUT_CLASSES, 'placeholder': '100'}),
             'description': forms.Textarea(attrs={'class': BASE_INPUT_CLASSES, 'rows': 4, 'placeholder': 'Опис автомобіля'}),
-            'image': forms.URLInput(attrs={'class': BASE_INPUT_CLASSES, 'placeholder': 'https://...'}),
+            'image': forms.ClearableFileInput(attrs={'class': BASE_INPUT_CLASSES, 'placeholder': 'https://...'}),
         }

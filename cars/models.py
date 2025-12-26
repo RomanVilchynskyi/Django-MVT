@@ -7,7 +7,7 @@ class Car(models.Model):
     year = models.PositiveIntegerField()
     price_per_day = models.PositiveIntegerField()  
     description = models.TextField(blank=True)
-    image = models.URLField(blank=True)  
+    image = models.ImageField(upload_to='cars_photos/', blank=True, null=True)  
 
     def __str__(self):
         return f"{self.brand} {self.model} ({self.year})"
