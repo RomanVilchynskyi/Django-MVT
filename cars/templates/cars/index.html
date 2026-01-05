@@ -3,11 +3,6 @@
 
 <h1 class="text-2xl font-bold mt-10 mb-4">Авто в оренді</h1>
 
-<a href="/cars/create/"
-   class="btn btn-info mb-3">
-  Створити
-</a>
-
 <div class="row mt-4">
     {% for car in cars %}
         <div class="col-12 col-md-4 mb-4">
@@ -29,14 +24,7 @@
                 <p class="text-muted">{{ car.year }} р.</p>
                 <p class="fw-semibold">{{ car.price_per_day }} грн/доба</p>
 
-                <div class="d-flex gap-2 mt-2">
-                    <a href="/cars/edit/{{ car.pk }}/" class="btn btn-warning btn-sm">
-                        Редагувати
-                    </a>
-                    <a href="/cars/delete/{{ car.pk }}/" class="btn btn-danger btn-sm">
-                        Видалити
-                    </a>
-                </div>
+                
 
             </div>
         </div>

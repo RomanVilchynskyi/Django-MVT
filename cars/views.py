@@ -5,10 +5,15 @@ from django.contrib import messages
 from cars.forms import CarForm
 from .models import Car
 
-
 def cars_index(request):
     cars = Car.objects.all()
+
     return render(request, "cars/index.html", {"cars": cars})
+
+def cars_list(request):
+    cars = Car.objects.all()
+    return render(request, "cars/adminIndex.html", {"cars": cars})
+
 
 
 def cars_detail(request, pk):

@@ -27,7 +27,7 @@
 
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Cars rent</a>
+    <a class="navbar-brand" href="{% url 'cars_index' %}">Cars rent</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,11 +39,11 @@
           </a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="cars/">Cars</a>
+          <a class="nav-link" href="{% url 'cars_list' %}">List Cars</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Cars</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>

@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<a class="btn btn-success mt-3" href="/cars/create">
+  + Create New Car
+</a>
+
+<h1 class="my-3">Cars List</h1>
+
+<table class="table table-hover align-middle">
+  <thead class="table-dark">
+    <tr>
+      <th>Photo</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Price / day</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for car in cars %}
+      <tr>
+        <td>
+          {% if car.image %}
+            <img src="{{ car.image.url }}" width="90" class="rounded">
+          {% else %}
+            <span class="text-muted">No photo</span>
+          {% endif %}
+        </td>
+
+        <td>{{ car.brand }}</td>
+        <td>{{ car.model }}</td>
+        <td>{{ car.year }}</td>
+        <td>{{ car.price_per_day }} $</td>
+        <td>{{ car.description|truncatechars:50 }}</td>
+
+        <td>
+          <a href="/cars/edit/{{ car.id }}/" class="btn btn-sm btn-warning">
+            Edit
+          </a>
+          <a href="/cars/delete/{{ car.id }}/"
+             class="btn btn-sm btn-danger"
+             onclick="return confirm('Delete this car?');">
+            Delete
+          </a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="7" class="text-center text-muted">
+          No cars found
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
