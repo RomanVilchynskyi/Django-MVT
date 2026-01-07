@@ -1,7 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h1 class="text-2xl font-bold mt-10 mb-4">Авто в оренді</h1>
+<h1 class="text-2xl font-bold mt-10 mb-4">
+    Авто в оренді
+</h1>
 
 <div class="row mt-4">
     {% for car in cars %}
@@ -16,20 +18,27 @@
                 {% endif %}
 
                 <h5 class="fw-bold">
-                    <a href="/cars/{{ car.pk }}/" class="text-decoration-none">
-                        {{ car.brand }} {{ car.model }}
-                    </a>
+                    {{ car.brand }} {{ car.model }}
+
+                    {% if car.id in fav_cars %}
+                        <a href="{% url 'remove_fav_car' car.id 'cars_index' %}"
+                           style="color: darkred">
+                            <i class="fa-solid fa-star"></i>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'add_fav_car' car.id 'cars_index' %}"
+                           style="color: darkred">
+                            <i class="fa-regular fa-star"></i>
+                        </a>
+                    {% endif %}
                 </h5>
 
                 <p class="text-muted">{{ car.year }} р.</p>
                 <p class="fw-semibold">{{ car.price_per_day }} грн/доба</p>
 
-                
-
             </div>
         </div>
     {% endfor %}
 </div>
-
 
 {% endblock %}

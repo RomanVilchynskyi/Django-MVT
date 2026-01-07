@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="row mt-4">
+    {% for car in cars %}
+    <div class="col-12 col-md-4 mb-4">
+        <div class="bg-white shadow p-4 rounded">
+
+            {% if car.image %}
+            <a href="/cars/{{ car.pk }}/">
+                <img src="{{ car.image.url }}" class="img-fluid rounded mb-3">
+            </a>
+            {% endif %}
+
+            <h5 class="fw-bold">
+                {{ car.brand }} {{ car.model }}
+
+                <a href="{% url 'remove_fav_car' car.id 'cars_index' %}" style="color: darkred">
+                    <i class="fa-solid fa-star"></i>
+                </a>
+            </h5>
+
+            <p class="text-muted">{{ car.year }} р.</p>
+            <p class="fw-semibold">{{ car.price_per_day }} грн/доба</p>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

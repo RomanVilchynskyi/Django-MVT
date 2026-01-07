@@ -3,12 +3,13 @@ from django.urls import reverse
 from django.contrib import messages
 
 from cars.forms import CarForm
+from favorites.favorites import get_count_of_favorite_cars, get_favorite_cars
 from .models import Car
 
 def cars_index(request):
     cars = Car.objects.all()
 
-    return render(request, "cars/index.html", {"cars": cars})
+    return render(request, "cars/index.html", {"cars": cars, "fav_count": get_count_of_favorite_cars(request), "fav_cars": get_favorite_cars(request)})
 
 def cars_list(request):
     cars = Car.objects.all()
