@@ -8,7 +8,7 @@
         "year": 2020,
         "price_per_day": 1500,
         "description": "Комфортний седан бізнес-класу.",
-        "image": "cars_photos/camry.png"
+        "image": "cars_photos/camry.jpg"
         
     }
     },
@@ -21,7 +21,7 @@
         "year": 2019,
         "price_per_day": 2500,
         "description": "Преміум позашляховик, повний привід.",
-        "image": "cars_photos/x5.jfif"
+        "image": "cars_photos/x5.jpg"
         }
     },
     {
@@ -33,7 +33,7 @@
         "year": 2018,
         "price_per_day": 1100,
         "description": "Економний і надійний автомобіль.",
-        "image": "cars_photos/civic.jfif"
+        "image": "cars_photos/civic.jpg"
         }
     },
     {
@@ -45,7 +45,7 @@
             "year": 2021,
             "price_per_day": 2300,
             "description": "Комфортний бізнес-седан з сучасними технологіями.",
-            "image": "cars_photos/a6.jfif"
+            "image": "cars_photos/a6.jpg"
         }
     },
     {
@@ -57,7 +57,7 @@
             "year": 2020,
             "price_per_day": 2400,
             "description": "Преміальний седан для комфортних подорожей.",
-            "image": "cars_photos/w214.jfif"
+            "image": "cars_photos/w214.jpg"
         }
     },
     {
@@ -69,7 +69,7 @@
             "year": 2019,
             "price_per_day": 1600,
             "description": "Надійний сімейний автомобіль.",
-            "image": "cars_photos/passat.jfif"
+            "image": "cars_photos/passat.jpg"
         }
     },
     {
@@ -81,7 +81,7 @@
             "year": 2018,
             "price_per_day": 1400,
             "description": "Практичний та економний автомобіль.",
-            "image": "cars_photos/octavia.jfif"
+            "image": "cars_photos/octavia.jpg"
         }
     },
     {
@@ -93,7 +93,7 @@
             "year": 2017,
             "price_per_day": 1200,
             "description": "Зручний міський хетчбек.",
-            "image": "cars_photos/focus.jfif"
+            "image": "cars_photos/focus.jpg"
         }
     },
     {
@@ -105,7 +105,7 @@
             "year": 2021,
             "price_per_day": 2000,
             "description": "Сучасний кросовер для міста та подорожей.",
-            "image": "cars_photos/tucson.jfif"
+            "image": "cars_photos/tucson.jpg"
         }
     },
     {
@@ -117,7 +117,7 @@
             "year": 2020,
             "price_per_day": 1900,
             "description": "Комфортний та просторий SUV.",
-            "image": "cars_photos/sportage.jfif"
+            "image": "cars_photos/sportage.jpg"
         }
     },
     {
@@ -129,7 +129,7 @@
             "year": 2019,
             "price_per_day": 1700,
             "description": "Популярний компактний кросовер.",
-            "image": "cars_photos/qashqai.jfif"
+            "image": "cars_photos/qashqai.jpg"
         }
     },
     {
@@ -141,7 +141,7 @@
             "year": 2021,
             "price_per_day": 2100,
             "description": "Стильний кросовер з динамічним керуванням.",
-            "image": "cars_photos/cx-5.jfif"
+            "image": "cars_photos/cx-5.jpg"
         }
     },
     {
@@ -153,7 +153,7 @@
             "year": 2018,
             "price_per_day": 1300,
             "description": "Економний автомобіль для щоденного використання.",
-            "image": "cars_photos/megane.jfif"
+            "image": "cars_photos/megane.jpg"
         }
     }
 ]
