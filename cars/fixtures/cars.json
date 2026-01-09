@@ -7,7 +7,8 @@
         "model": "Camry",
         "year": 2020,
         "price_per_day": 1500,
-        "description": "Комфортний седан бізнес-класу."
+        "description": "Комфортний седан бізнес-класу.",
+        "image": "cars_photos/camry.png"
         
     }
     },
@@ -19,7 +20,8 @@
         "model": "X5",
         "year": 2019,
         "price_per_day": 2500,
-        "description": "Преміум позашляховик, повний привід."
+        "description": "Преміум позашляховик, повний привід.",
+        "image": "cars_photos/x5.jfif"
         }
     },
     {
@@ -30,7 +32,128 @@
         "model": "Civic",
         "year": 2018,
         "price_per_day": 1100,
-        "description": "Економний і надійний автомобіль."
-        }}
-        
+        "description": "Економний і надійний автомобіль.",
+        "image": "cars_photos/civic.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 4,
+        "fields": {
+            "brand": "Audi",
+            "model": "A6",
+            "year": 2021,
+            "price_per_day": 2300,
+            "description": "Комфортний бізнес-седан з сучасними технологіями.",
+            "image": "cars_photos/a6.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 5,
+        "fields": {
+            "brand": "Mercedes-Benz",
+            "model": "w214",
+            "year": 2020,
+            "price_per_day": 2400,
+            "description": "Преміальний седан для комфортних подорожей.",
+            "image": "cars_photos/w214.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 6,
+        "fields": {
+            "brand": "Volkswagen",
+            "model": "Passat",
+            "year": 2019,
+            "price_per_day": 1600,
+            "description": "Надійний сімейний автомобіль.",
+            "image": "cars_photos/passat.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 7,
+        "fields": {
+            "brand": "Skoda",
+            "model": "Octavia",
+            "year": 2018,
+            "price_per_day": 1400,
+            "description": "Практичний та економний автомобіль.",
+            "image": "cars_photos/octavia.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 8,
+        "fields": {
+            "brand": "Ford",
+            "model": "Focus",
+            "year": 2017,
+            "price_per_day": 1200,
+            "description": "Зручний міський хетчбек.",
+            "image": "cars_photos/focus.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 9,
+        "fields": {
+            "brand": "Hyundai",
+            "model": "Tucson",
+            "year": 2021,
+            "price_per_day": 2000,
+            "description": "Сучасний кросовер для міста та подорожей.",
+            "image": "cars_photos/tucson.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 10,
+        "fields": {
+            "brand": "Kia",
+            "model": "Sportage",
+            "year": 2020,
+            "price_per_day": 1900,
+            "description": "Комфортний та просторий SUV.",
+            "image": "cars_photos/sportage.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 11,
+        "fields": {
+            "brand": "Nissan",
+            "model": "Qashqai",
+            "year": 2019,
+            "price_per_day": 1700,
+            "description": "Популярний компактний кросовер.",
+            "image": "cars_photos/qashqai.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 12,
+        "fields": {
+            "brand": "Mazda",
+            "model": "CX-5",
+            "year": 2021,
+            "price_per_day": 2100,
+            "description": "Стильний кросовер з динамічним керуванням.",
+            "image": "cars_photos/cx-5.jfif"
+        }
+    },
+    {
+        "model": "cars.Car",
+        "pk": 13,
+        "fields": {
+            "brand": "Renault",
+            "model": "Megane",
+            "year": 2018,
+            "price_per_day": 1300,
+            "description": "Економний автомобіль для щоденного використання.",
+            "image": "cars_photos/megane.jfif"
+        }
+    }
 ]

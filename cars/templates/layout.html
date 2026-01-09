@@ -15,6 +15,7 @@
       src="https://kit.fontawesome.com/665c3db5a0.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" />
 </head>
 
@@ -49,7 +50,7 @@
           <a class="nav-link" href="#">Cars</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'favs_index' %}">favorites</a>
+          <a class="nav-link" href="{% url 'favs_index' %}">Favorites</a>({{fav_count}})
         </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
