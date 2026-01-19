@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'cars',
     'home',
     'favorites',
-    'storages'
+    'storages',
+    'rentals'
 ]
 
 MIDDLEWARE = [
@@ -140,8 +141,8 @@ STATIC_URL = f"https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER_STATIC}/"
 MEDIA_URL = f"https://{AZURE_CUSTOM_DOMAIN}/{AZURE_CONTAINER_MEDIA}/"
 
 # ----
-AZURE_ACCOUNT_KEY = "bla"
-AZURE_CONNECTION_STRING = "blabla"
+AZURE_ACCOUNT_KEY = ""
+AZURE_CONNECTION_STRING = ""
 
 STORAGES = {
     "default": {

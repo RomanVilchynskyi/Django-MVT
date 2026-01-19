@@ -55,3 +55,8 @@ def cars_delete(request, pk):
     car.delete()
     messages.success(request, f"Car has been deleted successfully")
     return redirect("/cars")
+
+def save(self, *args, **kwargs):
+    days = (self.end_date - self.start_date).days + 1
+    self.total_price = days * self.car.price_per_day
+    super().save(*args, **kwargs)

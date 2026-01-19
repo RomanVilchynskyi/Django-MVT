@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Car(models.Model):
@@ -11,3 +12,6 @@ class Car(models.Model):
 
     def __str__(self):
         return f"{self.brand} {self.model} ({self.year})"
+    
+  
+

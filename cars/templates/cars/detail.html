@@ -1,21 +1,63 @@
 {% extends 'layout.html' %}
+
 {% block content %}
+<div class="container my-5">
 
-<h1 class="text-3xl font-bold mb-4">{{ car.brand }} {{ car.model }}</h1>
+  <div class="card shadow-sm border-0">
+    <div class="row g-0">
 
-{% if car.image %}
-    <img src="{{ car.image.url }}" class="w-full max-w-md rounded mb-4">
-{% endif %}
+      <!-- Фото -->
+      <div class="col-md-5">
+        {% if car.image %}
+          <img src="{{ car.image.url }}" class="img-fluid rounded-start" alt="{{ car.brand }} {{ car.model }}">
+        {% else %}
+          <div class="d-flex align-items-center justify-content-center h-100 text-muted">
+            Немає фото
+          </div>
+        {% endif %}
+      </div>
 
-<p class="text-lg"><b>Рік:</b> {{ car.year }}</p>
-<p class="text-lg"><b>Ціна:</b> {{ car.price_per_day }} грн/доба</p>
+      <!-- Інформація -->
+      <div class="col-md-7">
+        <div class="card-body">
 
-{% if car.description %}
-    <p class="mt-4"><b>Опис:</b> {{ car.description }}</p>
-{% endif %}
+          <h2 class="card-title mb-3">
+            {{ car.brand }} {{ car.model }}
+          </h2>
 
-<a href="/cars" class="text-blue-600 mt-4 block">← Назад</a>
+          <p class="card-text fs-5">
+            <strong>Рік:</strong> {{ car.year }}
+          </p>
 
+          <p class="card-text fs-5">
+            <strong>Ціна:</strong>
+            <span class="badge bg-dark fs-6">
+              {{ car.price_per_day }} грн / доба
+            </span>
+          </p>
 
+          {% if car.description %}
+            <hr>
+            <p class="card-text">
+              <strong>Опис:</strong><br>
+              {{ car.description }}
+            </p>
+          {% endif %}
 
+          <div class="mt-4 d-flex gap-2">
+            <a href="/cars" class="btn btn-outline-secondary">
+              ← Назад
+            </a>
+            <a href="/rentals/create?car={{ car.id }}" class="btn btn-primary">
+              Орендувати
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
 {% endblock %}
