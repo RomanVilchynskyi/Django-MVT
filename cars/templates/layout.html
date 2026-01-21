@@ -1,27 +1,21 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}RentCar{% endblock %}</title>
 
-   <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://kit.fontawesome.com/665c3db5a0.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" />
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}RentCar{% endblock %}</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/665c3db5a0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" />
 </head>
 
 <body class="bg-gray-100 text-gray-900">
 
-    <!-- Навбар
+  <!-- Навбар
     <nav class="bg-white shadow mb-6">
         <div class="flex items-center gap-4 p-4 container mx-auto">
             <a href="/" class="text-xl font-bold">RentCar</a>
@@ -30,32 +24,33 @@
         </div>
     </nav> -->
 
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'cars_index' %}">Cars rent</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <!-- <li class="nav-item">
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'cars_index' %}">Cars rent</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <!-- <li class="nav-item">
           <a class="nav-link active" href="#">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'cars_list' %}">List Cars</a>
-        </li>
-        <!-- <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cars_list' %}">List Cars</a>
+          </li>
+          <!-- <li class="nav-item">
           <a class="nav-link" href="#">Cars</a>
         </li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'favs_index' %}">Favorites ({{fav_count}})</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'rentals_index' %}">Rent cars</a>
-        </li>
-        <!-- <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'favs_index' %}">Favorites ({{fav_count}})</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'rentals_index' %}">Rent cars</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Action</a>
@@ -65,28 +60,44 @@
             <a class="dropdown-item" href="#">Separated link</a>
           </div>
         </li> -->
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
+        </ul>
+        <form method="get" class="d-flex mb-4">
+          <input id="searchInput" class="form-control me-sm-2 rounded-2" type="search" name="q" placeholder="Search"
+            value="{{ request.GET.q|default:'' }}">
+          <button class="btn btn-secondary" type="submit">
+            Search
+          </button>
+          <a href="{% url 'cars_index' %}" class="btn btn-outline-secondary ms-2">
+            Очистити
+          </a>
+        </form>
+
+      </div>
     </div>
+  </nav>
+
+  <form method="get" class="d-flex mb-4 mt-3 justify-content-end">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-3"> <input type="number" name="min_price" class="form-control rounded-3" placeholder="Ціна від"
+          value="{{ request.GET.min_price }}"> </div> <!-- Ціна до -->
+      <div class="col-md-3"> <input type="number" name="max_price" class="form-control rounded-3" placeholder="Ціна до"
+          value="{{ request.GET.max_price }}"> </div> <!-- Кнопка фільтру -->
+      <div class="col-md-3"> <button class="btn btn-dark w-100 rounded-3"> Фільтр </button> </div>
+    </div>
+  </form>
+
+
+  <div class="clearfix"></div>
+  <!-- Контент -->
+  <div class="container mx-auto px-4 pt-20">
+    {% block content %}{% endblock %}
   </div>
-</nav>
 
-   
-    <div class="clearfix"></div>
-    <!-- Контент -->
-    <div class="container mx-auto px-4 pt-20">
-        {% block content %}{% endblock %}
-    </div>
-
-     {% include 'components/toast.html' %}
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+  {% include 'components/toast.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
 </body>
+
 </html>

@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from cars.models import Car
 from rentals.models import CarRental
 from .forms import CarRentalForm
+from django.contrib import messages
 
 def rentals_list(request):
     rentals = CarRental.objects.all()
@@ -20,6 +21,7 @@ def rent_create(request):
         form = CarRentalForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, f"Car has been rent successfully")
             return redirect('cars_list')
     else:
         form = CarRentalForm(initial={'car': car})

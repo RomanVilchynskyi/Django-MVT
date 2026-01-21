@@ -5,11 +5,38 @@ from django.contrib import messages
 from cars.forms import CarForm
 from favorites.favorites import get_count_of_favorite_cars, get_favorite_cars
 from .models import Car
+from django.db.models import Q
 
 def cars_index(request):
     cars = Car.objects.all()
 
-    return render(request, "cars/index.html", {"cars": cars, "fav_count": get_count_of_favorite_cars(request), "fav_cars": get_favorite_cars(request)})
+    q = request.GET.get('q', '').strip()
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+
+    # 🔍 Пошук
+    if q:
+        cars = cars.filter(
+            Q(brand__icontains=q) |
+            Q(model__icontains=q)
+        )
+
+    # 💰 Фільтрація по ціні
+    if min_price:
+        cars = cars.filter(price_per_day__gte=min_price)
+
+    if max_price:
+        cars = cars.filter(price_per_day__lte=max_price)
+
+    return render(
+        request,
+        "cars/index.html",
+        {
+            "cars": cars,
+            "fav_count": get_count_of_favorite_cars(request),
+            "fav_cars": get_favorite_cars(request),
+        }
+    )
 
 def cars_list(request):
     cars = Car.objects.all()

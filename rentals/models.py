@@ -50,9 +50,11 @@ class CarRental(models.Model):
             raise ValidationError("Автомобіль вже орендований у цей період")
 
     def save(self, *args, **kwargs):
+        self.full_clean() 
         days = (self.end_date - self.start_date).days + 1
         self.total_price = days * self.car.price_per_day
         super().save(*args, **kwargs)
+
 
     def __str__(self):
         return f"{self.car} ({self.start_date} → {self.end_date})"
